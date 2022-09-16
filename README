@@ -1,0 +1,44 @@
+SETUP
+=====
+1) Setup Anaconda environment. Run these commands (assumes Anaconda is already installed):
+conda create -n SSLTL
+conda activate SSLTL
+pip install tarjan
+
+2) Install rabinizer 4 (to get the ltl2dra tool) from here: https://www7.in.tum.de/~kretinsk/rabinizer4.html
+   I put it in ~/rabinizer4 (~ represents my home folder).
+   Update the "ltl2drafolder" variable int the scripts to point at the bin folder. (/home/user/rabinizer4/bin)
+   Also Rabinizer verfiied is available, but I did not try it: https://www7.in.tum.de/~sickert/projects/rabinizer_verfied/
+
+3) Install CPLEX. I used version 12.10.  Students can get the full version free: https://content-eu-7.content-cms.com/b73a5759-c6a6-4033-ab6b-d9d4f9a6d65b/dxsites/151914d1-03d2-48fe-97d9-d21166848e65/academic/home
+   I installed in the folder ~/CPLEX_Studio1210
+
+4) Setup CPLEX's Python
+   See https://www.ibm.com/support/knowledgecenter/SSSA5P_12.7.1/ilog.odms.cplex.help/CPLEX/GettingStarted/topics/set_up/Python_setup.html
+   I ran these commands:
+       conda activate SSLTL
+       cd ~/CPLEX_Studio1210/cplex/python/3.7/x86-64_linux
+       python setup.py install
+
+ISMAIL: use this:cd /opt/ibm/ILOG/CPLEX_Studio_Community129/cplex/python/3.7/x86-64_linux
+
+5) Install SPOT: https://spot.lrde.epita.fr/install.html. This is tricky, since it must be compiled.
+   I used these commands, which installs SPOT inside ~/usr:
+        ./configure --prefix ~/usr
+        make
+        make install
+
+6) Install DOT. On Ubuntu, you can run this command:
+   sudo apt-get install graphviz
+
+
+ Notes: Since SPOT and DOT are only used for visualizing the MDP, they are not absolutely necessary.
+        If you don't install them, you cannot use the SSLTLplot library.
+
+
+CODE
+====
+SSLTL - General library for working with product MDPs, automatons, etc.
+SSLTL_DeterministicLP_lib - Library for running determinstic LP
+SSLTLplot - Library for plotting
+script_SSLTL_paper_do_timings - Script for doing timings
