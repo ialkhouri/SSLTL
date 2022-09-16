@@ -1,3 +1,7 @@
+This repo is for the 2022 AAMAS paper "Controller Synthesis for Omega-Regular and Steady-State Specifications". 
+
+For setup, please follow the below instructions. 
+
 SETUP
 =====
 1) Setup Anaconda environment. Run these commands (assumes Anaconda is already installed):
@@ -19,8 +23,6 @@ pip install tarjan
        conda activate SSLTL
        cd ~/CPLEX_Studio1210/cplex/python/3.7/x86-64_linux
        python setup.py install
-
-ISMAIL: use this:cd /opt/ibm/ILOG/CPLEX_Studio_Community129/cplex/python/3.7/x86-64_linux
 
 5) Install SPOT: https://spot.lrde.epita.fr/install.html. This is tricky, since it must be compiled.
    I used these commands, which installs SPOT inside ~/usr:
